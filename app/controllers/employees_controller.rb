@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
 
+
     def index
         @employees = Employee.all
     end
@@ -10,6 +11,7 @@ class EmployeesController < ApplicationController
 
     def new
         @employee = Employee.new
+        @dogs = Dog.all
     end
 
     def create
@@ -23,9 +25,19 @@ class EmployeesController < ApplicationController
     end
 
     def update
+        t_or_f = false
         @employee = find_employee
-        @employee.update(param_settings)
-        redirect_to employee_path(@employee)
+        Employee.all.each do |employee|
+            if params[:employee][:alias] == employee.alias || params[:employee][:title] == employee.title
+               t_or_f = true
+            else
+            end
+        end
+        if t_or_f  == true
+            redirect_to employee_path(@employee)
+        else @employee.update(param_settings)
+            redirect_to employee_path(@employee)
+        end
     end
 
     private
