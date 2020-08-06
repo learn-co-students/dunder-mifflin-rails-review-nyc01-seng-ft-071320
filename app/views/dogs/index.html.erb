@@ -1,0 +1,7 @@
+<h1>Dogs Index Page</h1>
+<%# link_to "Sort by owners count", "/dogs/?sort=t" %>
+<%= button_to "Sort by owners count", "/dogs", method: :get, name: :sort %>
+
+<% @dogs.each do |dog| %>
+<p><%= link_to dog.name, dog_path(dog) %> | <%= dog.employee_count %></p>
+<% end %>
