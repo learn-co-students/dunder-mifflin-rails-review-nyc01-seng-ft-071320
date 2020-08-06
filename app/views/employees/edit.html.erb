@@ -1,6 +1,25 @@
-<h1><%= @employee.name %></h1>
-<p>Alias: <%= @employee.alias %></p>
-<p>Title: <%= @employee.title %></p>
-<p>Office: <%= @employee.office %></p>
-<p>Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %></p>
-<p><img src = "<%= @employee.img_url %>"</p>
+<h1>EDIT FORM</h1>
+<%= form_for @employee do |f| %>
+    <p><%= f.label :first_name %></p>
+    <%= f.text_field :first_name %>
+
+    <p><%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+
+    <p><%= f.label :alias %></p>
+    <%= f.text_field :alias %>
+
+    <p><%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <p><%= f.label :office %></p>
+    <%= f.text_field :office %>
+
+    <p><%= f.label :dog_id %>
+    <%= f.collection_select :dog_id, @dogs, :id, :name %>
+   
+    <p><%= f.label :img_url %>
+    <%= f.text_field :img_url %>
+    <%= f.submit %>
+    <% end%>
+    

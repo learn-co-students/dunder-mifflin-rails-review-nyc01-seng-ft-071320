@@ -19,6 +19,7 @@ class EmployeesController < ApplicationController
 
     def edit
         @employee = find_employee
+        @dogs = Dog.all
     end
 
     def update
