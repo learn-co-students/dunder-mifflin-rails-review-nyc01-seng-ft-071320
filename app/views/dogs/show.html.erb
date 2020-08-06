@@ -1,0 +1,8 @@
+<div>
+<%=@dog.name%><br>
+<%=@dog.breed%><br>
+<%=@dog.age%><br>
+<% @dog.employees do |emp| %>
+    <%= emp.name %>
+<% end %>
+</div>

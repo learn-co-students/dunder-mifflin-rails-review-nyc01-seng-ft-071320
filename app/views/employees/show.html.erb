@@ -1,0 +1,10 @@
+<h1>Employee Show</h1>
+
+<h3>First Name: <%=@employee.first_name%> Last Name: <%=@employee.last_name%></h3>
+<p>Alias: <%=@emploee.alias%></p><br>
+<p>Title: <%=@emploee.title%></p>
+<p>Office: <%=@emploee.office%></p>
+<br>
+<img src="<%= @employee.img_url %>" alt="<%= @employee.title %>">
+
+<%= #link_to "Index Page", employees_path %> 
