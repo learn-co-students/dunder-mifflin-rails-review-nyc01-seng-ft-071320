@@ -1,0 +1,8 @@
+<h1> These are all the different dogs we have </h1>
+<%= button_to "New Dog", new_dog_path, method: :get %>
+
+<p> We have <%=@dogs.count%> dogs!</p>
+
+<%@dogs.each do |dog| %>
+    <p><%=link_to dog.name, dog_path(dog)%></p>
+<%end%>
