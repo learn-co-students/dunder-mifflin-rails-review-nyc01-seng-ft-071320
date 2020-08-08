@@ -1,0 +1,6 @@
+<h1> These are all the different dogs we have </h1>
+<p> We have <%=@dogs.count%> dogs!</p>
+
+<%@dogs.each do |dog| %>
+    <p><%=link_to dog.name, dog_path(dog)%></p>
+<%end%>

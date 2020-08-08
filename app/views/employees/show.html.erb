@@ -1,0 +1,11 @@
+<h1> Hi, I'm <%=@employee.first_name %> <%=@employee.last_name %>.</h1>
+
+<img src=<%= @employee.img_url %> height=300></p>
+<p>My alias is <%=@employee.alias%></p>
+<p>I'm a <%=@employee.title%>.</p>
+<p>I'm the caretaker of <%= @employee.dog.name %>.</p>
+<p>My Office is in <%=@employee.office%></p>
+
+<br>
+
+<%= button_to "Home Page", dogs_path, method: :get %>

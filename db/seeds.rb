@@ -1,8 +1,14 @@
+require 'faker'
+
 Employee.destroy_all
 Dog.destroy_all
 
 5.times do
   Dog.create(name: Faker::Dog.name, breed: Faker::Dog.breed, age: Faker::Dog.age)
+end
+
+5.times do
+  Employee.create(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name, alias: Faker::Name.initials, title: )
 end
 
 Employee.create(first_name: "Jim", last_name: "Halpert", alias: "Big Tuna", title: "Regional Co-Manager", office: "Scranton", dog: Dog.second, img_url: "https://s-i.huffpost.com/gen/2028878/images/n-UPROXX-628x314.jpg")

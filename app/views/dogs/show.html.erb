@@ -1,0 +1,12 @@
+<h1> Hi, I'm <%=@dog.name %>. Woof!</h1>
+
+<p>I'm a <%=@dog.breed%></p>
+<p>I'm a <%=@dog.age%>.</p>
+<p> My owners are
+<% @dog.employees.each do |e| %>
+    <%=link_to e.first_name, employee_path(e)%>
+<%end%>
+.</p>
+<br>
+
+<%= button_to "Home Page", dogs_path, method: :get %>

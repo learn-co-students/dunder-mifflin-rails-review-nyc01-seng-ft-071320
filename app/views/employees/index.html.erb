@@ -1,0 +1,5 @@
+<h1> These are Dunder Mifflin's Employees </h1>
+
+<% @employees.each do |e| %>
+    <p><%=link_to e.first_name, employee_path(e)%> <%= e.last_name%></p>
+<%end%>
