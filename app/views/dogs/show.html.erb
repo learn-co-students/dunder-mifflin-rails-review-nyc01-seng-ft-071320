@@ -4,7 +4,7 @@
 <p>I'm a <%=@dog.age%>.</p>
 <p> My owners are
 <% @dog.employees.each do |e| %>
-    <%=link_to e.first_name, employee_path(e)%>
+    <%=link_to e.full_name, employee_path(e)%>
 <%end%>
 .</p>
 <br>

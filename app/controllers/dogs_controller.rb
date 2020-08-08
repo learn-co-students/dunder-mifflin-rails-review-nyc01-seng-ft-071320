@@ -1,7 +1,7 @@
 class DogsController < ApplicationController
 
     def index
-        @dogs = Dog.all
+        @dogs = Dog.all.sort_by { |dog| -dog.employees.size}
     end
 
     def new
@@ -10,7 +10,6 @@ class DogsController < ApplicationController
 
     def show
         @dog = Dog.find(params[:id])
-        @employee = Employee.find(params[:id])
     end
 
     def create
