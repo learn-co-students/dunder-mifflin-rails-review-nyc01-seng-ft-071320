@@ -1,0 +1,12 @@
+<h1>Dog Index Page</h1>
+
+<%@pop_dogs.each do |dog|%>
+    Name: <%= link_to dog.name, dog_path(dog.id) %><br>
+    Age: <%= dog.age %><br>
+    Breed: <%= dog.breed %><br>
+<% end %>
+
+
+
+
+
